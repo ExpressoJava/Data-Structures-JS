@@ -53,7 +53,7 @@ class HashTable {
 		return sum % n
 	}
 }
-const myHT = new HashTable(25) // bucket value of 25. Can always double when is half-full
+const myHT = new HashTable(25) // bucket value of 25. Can always implment resize and double when is half-full
 
 console.log(myHT)
 
