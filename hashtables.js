@@ -1,7 +1,7 @@
 class HashTable {
 	constructor() {
 		this._storage = []
-		this._tableSize = val // initialize at the value of 25. we can always increase later
+		this._tableSize = val // initialize value
 	}
 	/*
 	 * Insert a new key-value pair
