@@ -1,16 +1,17 @@
-/** Class repesenting a Hash Table **/
-
 class HashTable {
 	constructor() {
 		this._storage = []
-		this.tableSize = 25
+		this._tableSize = val // initialize at the value of 25. we can always increase later
 	}
 	/*
 	 * Insert a new key-value pair
 	 * @param {string} key - the key associated with the value
 	 * @param {*} value - the value to insert
 	 */
-	insert() {}
+	insert(key, value) {
+		const index = this._hash(key, this.tableSize)
+		this._storage[index] = value
+	}
 	/*
 	 * Delete a key-value pair
 	 * @param {string} - the key associated with the value
@@ -41,7 +42,7 @@ const myHT = new HashTable()
 console.log(myHT)
 
 myHT.insert('a', 1)
-myHT.insert('b', 1)
+myHT.insert('b', 2)
 
 // console.log(myHT)
 
