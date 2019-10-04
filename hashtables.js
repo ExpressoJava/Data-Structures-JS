@@ -9,8 +9,12 @@ class HashTable {
 	 * @param {*} value - the value to insert
 	 */
 	insert(key, value) {
-		const index = this._hash(key, this.tableSize)
-		this._storage[index] = value
+		const index = this._hash(key, this._tableSize)
+
+		if (!this._storage[index]) this._storage[index] = [] // if it doesnt extst, then we initialize it
+		// [0,0,0,[],]
+		this._storage[index].push([key, value])
+		// [0,0,0,['a', 1, ['b', 2]]] // handling collision = hash func returns index for different key
 	}
 	/*
 	 * Delete a key-value pair
